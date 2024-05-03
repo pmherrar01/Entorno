@@ -1,0 +1,34 @@
+@startuml
+
+class TiendaMusical {
+    + alquilar()
+    + afinar()
+}
+
+class Instrumento {
+    - String nombre
+    - int codigo
+}
+
+class InstrumentoViento {
+    - boolean limpio
+    + limpiar()
+}
+
+class InstrumentoPercusion {
+    - Estuche estuche
+}
+
+
+class Estuche {
+    - double altura
+    - double anchura 
+    - String color
+}
+
+TiendaMusical --> Instrumento
+Instrumento <|-- InstrumentoViento
+Instrumento <|-- InstrumentoPercusion
+InstrumentoPercusion o-- Estuche
+
+@enduml
